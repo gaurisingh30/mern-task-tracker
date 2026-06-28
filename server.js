@@ -7,7 +7,11 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5500;
 
-app.use(cors());
+const corsOptions = {
+  origin: process.env.CORS_ORIGIN || '*',
+  credentials: true
+};
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 const mongoURI = process.env.MONGO_URI || 'mongodb://localhost:27017/tasktracker';

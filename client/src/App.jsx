@@ -4,7 +4,7 @@ import TaskForm from './components/TaskForm';
 import TaskList from './components/TaskList';
 import './App.css';
 
-const API_URL = '/api/tasks';
+const API_URL = import.meta.env.VITE_API_URL || 'https://mern-task-tracker-c3yl.onrender.com/api/tasks';
 
 function App() {
   const [tasks, setTasks] = useState([]);
